@@ -3,9 +3,7 @@ from datetime import datetime, timedelta
 import tkinter as tk
 from tkinter import messagebox, ttk
 
-# ==========================
-# Base de données
-# ==========================
+
 conn = sqlite3.connect("vaccination.db")
 cursor = conn.cursor()
 
@@ -22,10 +20,6 @@ CREATE TABLE IF NOT EXISTS animaux (
 """)
 conn.commit()
 conn.close()
-
-# ==========================
-# Fonctions
-# ==========================
 
 def ajouter_animal():
     nom = entry_nom.get()
@@ -89,9 +83,7 @@ def verifier_expiration():
                 f"Expire dans {jours_restants} jour(s)"
             )
 
-# ==========================
-# Interface Graphique
-# ==========================
+
 
 root = tk.Tk()
 root.title("Calendrier Vaccination Animaux")
